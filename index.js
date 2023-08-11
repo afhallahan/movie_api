@@ -1,5 +1,10 @@
-const express = require ('express');
-const app = express ();
+const express = require('express');
+ morgan = require('morgan');
+
+const app = express();
+
+//Use Morgan middleware to log requests
+app.use(morgan('common'));
 
 let topMovies = [
     {
@@ -61,6 +66,11 @@ app.get('/movies', (req, res) => {
 
 app.get('/', (req, res) => {
     res.send("Welcome to my movie app!");
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 app.listen(8080, () => {
