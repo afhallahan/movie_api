@@ -4,7 +4,9 @@ const express = require('express');
 const app = express();
 
 //Use Morgan middleware to log requests
-app.use(morgan('common'));
+app.use(morgan('combined'));
+
+app.use(express.static('public'));
 
 let topMovies = [
     {
