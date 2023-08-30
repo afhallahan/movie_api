@@ -59,13 +59,14 @@ let topMovies = [
     },
 ];
 
-//Get Express
-app.get('/movies', (req, res) => {
-    res.json(topMovies);
+//Create the GET route for /
+app.get('/', (req, res) => {
+    res.send("Welcome to my movie API!");
 });
 
-app.get('/', (req, res) => {
-    res.send("Welcome to my movie app!");
+//Create the GET route for /movies
+app.get('/movies', (req, res) => {
+    res.json(topMovies);
 });
 
 //Error-handling middleware function
@@ -74,6 +75,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
+//Start server
 app.listen(8080, () => {
     console.log('Your app is listening on port 8080.');
 });
