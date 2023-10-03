@@ -66,6 +66,10 @@ app.get('/', (req, res) => {
     res.send("Welcome to my movie API!");
 });
 
+app.get('/secreturl', (req, res) => {
+    res.send('This is a secret url with super top-secret content.');
+});
+
 //Create the GET route for /movies
 app.get('/movies', (req, res) => {
     res.json(topMovies);
