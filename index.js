@@ -82,6 +82,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
+app.use(morgan('dev'));
+
 //Start server
 app.listen(8080, () => {
     console.log('Your app is listening on port 8080.');
