@@ -76,6 +76,11 @@ app.get('/movies', (req, res) => {
     res.json(topMovies);
 });
 
+//Return a list of ALL movies to the user
+app.get('/movies', (req, res) => {
+    res.send('Successful GET request returning data on all movies');
+});
+
 //READ
 app.get('/movies/title', (req, res) => {
     const { title } = req.params; 
