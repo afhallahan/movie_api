@@ -11,54 +11,54 @@ app.use(express.static('public'));
 
 let topMovies = [
     {
-        title: 'Amelie',
-        director: 'Jean-Pierre Jeunet',
-        year: 2001
+        Title: 'Amelie',
+        Director: 'Jean-Pierre Jeunet',
+        Year: 2001
     },
     {
-        title: 'Eternal Sunshine of the Spotless Mind',
-        director: 'Michel Gondry',
-        year: 2004
+        Title: 'Eternal Sunshine of the Spotless Mind',
+        Director: 'Michel Gondry',
+        Year: 2004
     },
     {
-        title: 'Life is Beautiful',
-        director: 'Robert Benigni',
-        year: 1997
+        Title: 'Life is Beautiful',
+        Director: 'Robert Benigni',
+        Year: 1997
     },
     {
-        title: "Pan's Labyrinth",
-        director: 'Guillermo del Toro',
-        year: 2006
+        Title: "Pan's Labyrinth",
+        Director: 'Guillermo del Toro',
+        Year: 2006
     },
     {
-        title: 'Fight Club',
-        director: 'David Fincher',
-        year: 1999
+        Title: 'Fight Club',
+        Director: 'David Fincher',
+        Year: 1999
     },
     {
-        title: 'Parasite',
-        director: 'Bong Joon-ho',
-        year: 2019
+        Title: 'Parasite',
+        Director: 'Bong Joon-ho',
+        Year: 2019
     },
     {
-        title: 'Requim for a Dream',
-        director: 'Darren Aronofsky',
-        year: 2000
+        Title: 'Requim for a Dream',
+        Director: 'Darren Aronofsky',
+        Year: 2000
     },
     {
-        title: 'Old Boy',
-        director: 'Park Chan-wook',
-        year: 2003
+        Title: 'Old Boy',
+        Director: 'Park Chan-wook',
+        Year: 2003
     },
     {
-        title: 'There Will be Blood',
-        director: 'Paul Thomas Anderson',
-        year: 2007
+        Title: 'There Will be Blood',
+        Director: 'Paul Thomas Anderson',
+        Year: 2007
     },
     {
-        title: 'The Dark Knight',
-        director: 'Christopher Nolan',
-        year: 2008
+        Title: 'The Dark Knight',
+        Director: 'Christopher Nolan',
+        Year: 2008
     },
 ];
 
@@ -95,15 +95,14 @@ app.get('/genres/:name', (req, res) => {
 //READ
 app.get('/movies/:title', (req, res) => {
     const { title } = req.params; 
-    const movie = movies.find( movie => movie.Title == title );
+    const movie = movies.find(movie => movie.Title === title);
 
     if (movie) {
         res.status(200).json(movie);
     } else {
-        res.status(400).send('no such movie')
+        res.status(400).send('no such movie');
     }
-    })
-
+    });
 
 //Error-handling middleware function
 app.use((err, req, res, next) => {
