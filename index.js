@@ -26,7 +26,7 @@ let topMovies = [
         year: 1997
     },
     {
-        titel: "Pan's Labyrinth",
+        title: "Pan's Labyrinth",
         director: 'Guillermo del Toro',
         year: 2006
     },
@@ -75,6 +75,19 @@ app.get('/secreturl', (req, res) => {
 app.get('/movies', (req, res) => {
     res.json(topMovies);
 });
+
+//READ
+app.get('/movies/title', (req, res) => {
+    const { title } = req.params; 
+    const movies = movies.find( movie => movie.Title == title );
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+    }
+)
 
 //Error-handling middleware function
 app.use((err, req, res, next) => {
