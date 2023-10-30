@@ -81,18 +81,29 @@ app.get('/movies', (req, res) => {
     res.send('Successful GET request returning data on all movies');
 });
 
+// Return data about a single movie by title to the user
+app.get('/movies/:title', (req, res) => {
+    res.send(`Successful GET request returning data about the movie with title: ${req.params.title}`);
+});
+
+// Return data about a genre by name/title
+app.get('/genres/:name', (req, res) => {
+    res.send(`Successful GET request returning data about the genre with name: ${req.params.name}`);
+});
+
+
 //READ
-app.get('/movies/title', (req, res) => {
+app.get('/movies/:title', (req, res) => {
     const { title } = req.params; 
-    const movies = movies.find( movie => movie.Title == title );
+    const movie = movies.find( movie => movie.Title == title );
 
     if (movie) {
         res.status(200).json(movie);
     } else {
         res.status(400).send('no such movie')
     }
-    }
-)
+    })
+
 
 //Error-handling middleware function
 app.use((err, req, res, next) => {
