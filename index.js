@@ -146,6 +146,11 @@ app.post("/users/:userId/favorites", (req, res) => {
     res.send('Allow user to add movie to favorites');
 });
 
+//DELETE: allow user to remove a movie from favorites
+app.delete("/users/:userId/favorites/:movieId", (req, res) => {
+    res.send('Allow user to remove movie from favorites');
+});
+
 //Error-handling middleware function
 app.use((err, req, res, next) => {
   console.error(err.stack);
