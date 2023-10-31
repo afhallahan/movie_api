@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
+const { debounce } = require("lodash");
 
 const app = express();
 const port = 8080;
@@ -108,7 +109,7 @@ app.get("/movies", (req, res) => {
   res.json(movies);
 });
 
-//Route to return data about a single movie by title
+//GET: return data about a single movie by title
 app.get("/movies/:title", (req, res) => {
   const { title } = req.params;
   const movie = movies.find((movie) => movie.Title === title);
@@ -120,14 +121,19 @@ app.get("/movies/:title", (req, res) => {
   }
   });
 
-//Route to return data about genre
+//GET: return data about genre
 app.get("/movies/genre/:genreName", (req, res) => {
     res.send('Successful GET request returning data on genre');
 });
 
-//Route to return data about director
+//GET: return data about director
 app.get("/movies/directors/:directorName", (req, res) => {
     res.send('Successful GET request returning data on director');
+});
+
+//POST: allow new user to register
+app.post("/users", (req, res) => {
+    res.send('Allow user to register');
 });
 
 //Error-handling middleware function
