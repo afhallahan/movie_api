@@ -38,25 +38,31 @@
         <th>Response</th>
       </tr>
       <tr>
-        <td>Get all movies</td>
+        <td>Get list of all movies</td>
         <td>GET</td>
         <td>/movies</td>
         <td>JSON array of movie objects</td>
       </tr>
       <tr>
-        <td>Get a single movie by title</td>
+        <td>Get data about a single movie by title</td>
         <td>GET</td>
         <td>/movies/:title</td>
-        <td>JSON object with movie details</td>
+        <td>JSON object with movie details containing title, genre, description, director and year released. Example: 
+          Title: "Amelie",
+          Genre: "Romantic Comedy",
+          Director: "Jean-Pierre Jeunet",
+          Description:
+            "Despite being caught in her imaginative world, Amelie, a young waitress, decides to help people find happiness. Her quest to spread joy leads her on a journey where she finds true love.",
+          Year: 2001,  </td>
       </tr>
       <tr>
-        <td>Get genre by name</td>
+        <td>Get data about a genre by name</td>
         <td>GET</td>
         <td>/movies/genre/:genreName</td>
         <td>JSON object with genre details</td> 
       </tr>
       <tr>
-        <td>Get director by name</td>
+        <td>Get data about a director by name</td>
         <td>GET</td>
         <td>/movies/directors/:directorName</td>
         <td>JSON object with director details</td>
