@@ -136,6 +136,16 @@ app.post("/users", (req, res) => {
     res.send('Allow user to register');
 });
 
+//PUT: allow user to update info
+app.put("/users/:userId", (req, res) => {
+    res.send('Allow user to update info');
+});
+
+//POST: allow user to add a movie to favorites
+app.post("/users/:userId/favorites", (req, res) => {
+    res.send('Allow user to add movie to favorites');
+});
+
 //Error-handling middleware function
 app.use((err, req, res, next) => {
   console.error(err.stack);
