@@ -46,19 +46,19 @@
       <tr>
         <td>Get a single movie by title</td>
         <td>GET</td>
-        <td>/movies{title}</td>
+        <td>/movies/:title</td>
         <td>JSON object with movie details</td>
       </tr>
       <tr>
         <td>Get genre by name</td>
         <td>GET</td>
-        <td>/genres{name}</td>
+        <td>/movies/genre/:genreName</td>
         <td>JSON object with genre details</td> 
       </tr>
       <tr>
         <td>Get director by name</td>
         <td>GET</td>
-        <td>/directors/{name}</td>
+        <td>/movies/directors/:directorName</td>
         <td>JSON object with director details</td>
       </tr>
       <tr>
@@ -70,25 +70,25 @@
       <tr>
         <td>Update user info</td>
         <td>PUT</td>
-        <td>/users/{userID}</td>
+        <td>/users/:userId</td>
         <td>JSON object with updated user details (succes message)</td>
       </tr>
       <tr>
         <td>Add movie to favorites</td>
         <td>POST</td>
-        <td>/users/{userID}/favorites</td>
+        <td>//users/:userId/favorites</td>
         <td>JSON object indicating movie added (success message)</td>
       </tr>
       <tr>
         <td>Remove movie from favorites</td>
         <td>DELETE</td>
-        <td>/users/{userID}/favorites/{movieID}</td>
+        <td>/users/:userId/favorites/:movieId</td>
         <td>JSON object indicating movie removed (success message)</td>
       </tr>
       <tr>
         <td>Deregister user</td>
         <td>DELETE</td>
-        <td>/users/{userID}</td>
+        <td>/users/:userId/</td>
         <td>JSON objec indicating user removed (success message)</td>
       </tr>
 
