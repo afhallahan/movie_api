@@ -26,7 +26,7 @@ let movies = [
     },
     {
        "Title": "Life is Beautiful",
-       "Genre:" "Drama",
+       "Genre": "Drama",
        "Director": "Robert Benigni",
        "Description": "When an open-minded Jewish waiter and his son become victims of the Holocaust, he uses a perfect mixture of will, humor and imagination to protect his son from the dangers around their camp.",
        "Year": 1997
@@ -103,6 +103,18 @@ app.get('/movies/:title', (req, res) => {
 
     if (movie) {
         res.status(200).json(movie);
+    } else {
+        res.status(400).send('No such movie');
+    }
+});
+
+//READ
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
+
+    if (genre) {
+        res.status(200).json(genre);
     } else {
         res.status(400).send('No such movie');
     }
