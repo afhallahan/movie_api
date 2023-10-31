@@ -151,6 +151,12 @@ app.delete("/users/:userId/favorites/:movieId", (req, res) => {
     res.send('Allow user to remove movie from favorites');
 });
 
+//DELETE: allow user to deregister
+app.delete("/users/:userId/", (req, res) => {
+    res.send('Allow user to deregister');
+});
+
+
 //Error-handling middleware function
 app.use((err, req, res, next) => {
   console.error(err.stack);
