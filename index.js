@@ -1,5 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
+const bodyParser = require('body-parser');
+const uuid = require('uuid');
 
 const app = express();
 const port = 8080;
@@ -103,10 +105,10 @@ app.get("/secreturl", (req, res) => {
 
 //Create the GET route for /movies
 app.get("/movies", (req, res) => {
-  res.json(topMovies);
+  res.json(movies);
 });
 
-//READ
+//Route to return data about a single movie by title
 app.get("/movies/:title", (req, res) => {
   const { title } = req.params;
   const movie = movies.find((movie) => movie.Title === title);
@@ -116,12 +118,18 @@ app.get("/movies/:title", (req, res) => {
   } else {
     res.status(400).send("No such movie");
   }
+  });
+
+//Route to return data about genre
+app.get("/movies/genre/:genreName", (req, res) => {
+    res.send('Successful GET request returning data on genre');
 });
 
-//Return data about a genre by title
-app.get('/genre/:name', (req, res) => {
-    res.send('Successful GET request returning data about the genre with title :${req.params.name}');
+//Route to return data about director
+app.get("/movies/directors/:directorName", (req, res) => {
+    res.send('Successful GET request returning data on director');
 });
+
 //Error-handling middleware function
 app.use((err, req, res, next) => {
   console.error(err.stack);
