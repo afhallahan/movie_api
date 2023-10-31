@@ -31,71 +31,83 @@
     <h2>REST API Endpoints</h2>
     
     <table>
+
       <tr>
         <th>Request</th>
         <th>HTTP Method</th>
         <th>URL Endpoint</th>
         <th>Response</th>
       </tr>
+
       <tr>
         <td>Get list of all movies</td>
         <td>GET</td>
         <td>/movies</td>
         <td>JSON array of movie objects</td>
       </tr>
+
       <tr>
         <td>Get data about a single movie by title</td>
         <td>GET</td>
         <td>/movies/:title</td>
-        <td>JSON object with movie details containing title, genre, description, director and year released. Example: 
+        <td>JSON object with movie details containing title, genre, description, director and year released. Example:{ 
           Title: "Amelie",
           Genre: "Romantic Comedy",
           Director: "Jean-Pierre Jeunet",
           Description:
             "Despite being caught in her imaginative world, Amelie, a young waitress, decides to help people find happiness. Her quest to spread joy leads her on a journey where she finds true love.",
-          Year: 2001,  </td>
+          Year: 2001}  </td>
       </tr>
+
       <tr>
         <td>Get data about a genre by name</td>
         <td>GET</td>
         <td>/movies/genre/:genreName</td>
         <td>JSON object with genre details</td> 
       </tr>
+
       <tr>
         <td>Get data about a director by name</td>
         <td>GET</td>
         <td>/movies/directors/:directorName</td>
-        <td>JSON object with director details</td>
+        <td>JSON object with director details. Example: {
+          Director: "Christopher Nolan", Bio: "Christopher Nolan, born on July 30, 1970, in London, is a highly acclaimed British-American filmmaker known for his intricate storytelling and visionary approach to cinema. Rising to fame with his mind-bending films like "Memento" (2000) and "Inception" (2010), Nolan gained worldwide recognition for revitalizing the superhero genre with his Batman trilogy, including "Batman Begins" (2005), "The Dark Knight" (2008), and "The Dark Knight Rises" (2012). His works are characterized by complex narratives, non-linear storytelling, and deep exploration of themes like memory, time, and human psychology. Nolan's ability to blend intellectual depth with mainstream appeal has solidified his reputation as one of the most influential directors in contemporary filmmaking."}
+        </td>
       </tr>
+
       <tr>
         <td>Register new user</td>
         <td>POST</td>
         <td>/users</td>
-        <td>JSON object with user details (success message)</td>
+        <td>JSON object with user details. Example:{ username: alexbohush, password: xxxxx1234!, email: alex.bohush@gmail.com, Favorite Movies: []}  </td>
       </tr>
+
       <tr>
         <td>Update user info</td>
         <td>PUT</td>
         <td>/users/:userId</td>
-        <td>JSON object with updated user details (succes message)</td>
+        <td>JSON object with updated user details</td>
       </tr>
+
       <tr>
         <td>Add movie to favorites</td>
         <td>POST</td>
         <td>//users/:userId/favorites</td>
-        <td>JSON object indicating movie added (success message)</td>
+        <td>JSON object indicating movie added</td>
       </tr>
+
       <tr>
         <td>Remove movie from favorites</td>
         <td>DELETE</td>
         <td>/users/:userId/favorites/:movieId</td>
-        <td>JSON object indicating movie removed (success message)</td>
+        <td>JSON object indicating movie removed</td>
       </tr>
+
       <tr>
         <td>Deregister user</td>
         <td>DELETE</td>
         <td>/users/:userId/</td>
-        <td>JSON objec indicating user removed (success message)</td>
+        <td>A text message indicating successful removal of user</td>
       </tr>
 
     </table>
