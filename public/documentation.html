@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
-      table{
-          width: 80%;
-          margin: 20px auto;
-          border-collapse: collapse;
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
       }
-      th, td{
-          border: 1px solid #ddd;
-          padding: 12px;
-          text-align: left;
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
       }
-  </style>
+    </style>
 
     <title>myFlix</title>
-
   </head>
 
   <body>
-
     <h3>myFlix Documentation Page</h3>
     <p>
       This web application provides users with access to information about
@@ -31,14 +30,13 @@
     </p>
 
     <h4>REST API Endpoints</h4>
-    
-    <table>
 
+    <table>
       <tr>
         <th>Request</th>
         <th>URL Endpoint</th>
         <th>HTTP Method</th>
-        <th>Requst Body</th>
+        <th>Request Body</th>
         <th>Response Body</th>
       </tr>
 
@@ -55,13 +53,14 @@
         <td>/movies/:title</td>
         <td>GET</td>
         <td>None</td>
-        <td>JSON object with movie details containing title, genre, description, director and year released. Example:{ 
-          Title: "Amelie",
-          Genre: "Romantic Comedy",
-          Director: "Jean-Pierre Jeunet",
-          Description:
-            "Despite being caught in her imaginative world, Amelie, a young waitress, decides to help people find happiness. Her quest to spread joy leads her on a journey where she finds true love.",
-          Year: 2001}  </td>
+        <td>
+          JSON object with movie details containing title, genre, description,
+          director and year released. Example:{ "Title": "Amelie", "Genre":
+          "Romantic Comedy", "Director": "Jean-Pierre Jeunet", "Description":
+          "Despite being caught in her imaginative world, Amelie, a young
+          waitress, decides to help people find happiness. Her quest to spread
+          joy leads her on a journey where she finds true love.", "Year": 2001}
+        </td>
       </tr>
 
       <tr>
@@ -69,7 +68,7 @@
         <td>/movies/genre/:genreName</td>
         <td>GET</td>
         <td>None</td>
-        <td>JSON object with genre details</td> 
+        <td>JSON object with genre details</td>
       </tr>
 
       <tr>
@@ -77,8 +76,20 @@
         <td>/movies/directors/:directorName</td>
         <td>GET</td>
         <td>None</td>
-        <td>JSON object with director details. Example: {
-          Director: "Christopher Nolan", Bio: "Christopher Nolan, born on July 30, 1970, in London, is a highly acclaimed British-American filmmaker known for his intricate storytelling and visionary approach to cinema. Rising to fame with his mind-bending films like "Memento" (2000) and "Inception" (2010), Nolan gained worldwide recognition for revitalizing the superhero genre with his Batman trilogy, including "Batman Begins" (2005), "The Dark Knight" (2008), and "The Dark Knight Rises" (2012). His works are characterized by complex narratives, non-linear storytelling, and deep exploration of themes like memory, time, and human psychology. Nolan's ability to blend intellectual depth with mainstream appeal has solidified his reputation as one of the most influential directors in contemporary filmmaking."}
+        <td>
+          JSON object with director details. Example: { "Director": "Christopher
+          Nolan", "Bio": "Christopher Nolan, born on July 30, 1970, in London,
+          is a highly acclaimed British-American filmmaker known for his
+          intricate storytelling and visionary approach to cinema. Rising to
+          fame with his mind-bending films like "Memento" (2000) and "Inception"
+          (2010), Nolan gained worldwide recognition for revitalizing the
+          superhero genre with his Batman trilogy, including "Batman Begins"
+          (2005), "The Dark Knight" (2008), and "The Dark Knight Rises" (2012).
+          His works are characterized by complex narratives, non-linear
+          storytelling, and deep exploration of themes like memory, time, and
+          human psychology. Nolan's ability to blend intellectual depth with
+          mainstream appeal has solidified his reputation as one of the most
+          influential directors in contemporary filmmaking."}
         </td>
       </tr>
 
@@ -86,15 +97,26 @@
         <td>Register new user</td>
         <td>/users</td>
         <td>POST</td>
-        <td>User object. Example: {username, email, password, favorite movies}</td>
-        <td>JSON object with user details. Example:{ username: alexbohush, password: xxxxx1234!, email: alex.bohush@gmail.com, favorite movies: []}  </td>
+        <td>
+          User object. Example: {"username", "email", "password", "favorite
+          movies"}
+        </td>
+        <td>
+          JSON object with user details. Example:{ username: alexbohush,
+          password: xxxxx1234!, email: alex.bohush@gmail.com, favorite movies:
+          []}
+        </td>
       </tr>
 
       <tr>
         <td>Update user info</td>
         <td>/users/:userId</td>
         <td>PUT</td>
-        <td>User object {username, email, password, favorite movies}</td>
+        <td>
+          User object {"username": "newUsername", "email":
+          "new.email@example.com", "password", "favorite movies": ["Movie 1",
+          "Movie 2"]}
+        </td>
         <td>JSON object with updated user details</td>
       </tr>
 
@@ -119,9 +141,10 @@
         <td>/users/:userId/</td>
         <td>DELETE</td>
         <td>None</td>
-        <td>A text message indicating successful/unsuccessful removal of user</td>
+        <td>
+          A text message indicating successful/unsuccessful removal of user
+        </td>
       </tr>
-
     </table>
   </body>
 </html>
