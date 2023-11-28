@@ -1,3 +1,9 @@
+const mongoose = require('mongoose');
+const Models = requier('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
